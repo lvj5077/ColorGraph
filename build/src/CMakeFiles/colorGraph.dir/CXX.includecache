@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jin/Desktop/testGraph (2)/src/colorGraph.cpp
+boost/graph/adjacency_list.hpp
+-
+boost/graph/erdos_renyi_generator.hpp
+-
+boost/random/linear_congruential.hpp
+-
+boost/graph/graph_traits.hpp
+/home/jin/Desktop/testGraph (2)/src/boost/graph/graph_traits.hpp
+fstream
+-
+sstream
+-
+string
+-
+stdio.h
+-
+iostream
+-
+utility
+-
+algorithm
+-
+vector
+-
+iomanip
+-
+

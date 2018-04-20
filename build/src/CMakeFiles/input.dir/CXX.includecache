@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jin/Desktop/testGraph (2)/src/input.cpp
+iostream
+-
+utility
+-
+algorithm
+-
+vector
+-
+iostream
+-
+fstream
+-
+sstream
+-
+iomanip
+-
+typeinfo
+-
+boost/graph/graph_traits.hpp
+/home/jin/Desktop/testGraph (2)/src/boost/graph/graph_traits.hpp
+boost/graph/adjacency_list.hpp
+/home/jin/Desktop/testGraph (2)/src/boost/graph/adjacency_list.hpp
+

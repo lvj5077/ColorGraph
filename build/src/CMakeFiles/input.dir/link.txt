@@ -1,0 +1,1 @@
+g++   -g   CMakeFiles/input.dir/input.cpp.o  -o ../../bin/input  -L"/home/jin/Desktop/testGraph (2)/lib" -rdynamic 

@@ -1,0 +1,1 @@
+g++   -g   CMakeFiles/testMatrix.dir/testMatrix.cpp.o  -o ../../bin/testMatrix  -L"/home/jin/Desktop/testGraph (2)/lib" -rdynamic 

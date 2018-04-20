@@ -1,0 +1,1 @@
+g++   -g   CMakeFiles/colorGraph.dir/colorGraph.cpp.o  -o ../../bin/colorGraph  -L"/home/jin/Desktop/testGraph (2)/lib" -rdynamic 
