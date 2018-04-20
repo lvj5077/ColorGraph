@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/utilities.h
+boost/graph/adjacency_list.hpp
+-
+boost/graph/erdos_renyi_generator.hpp
+-
+boost/random/linear_congruential.hpp
+-
+boost/graph/graph_traits.hpp
+../include/boost/graph/graph_traits.hpp
+fstream
+-
+sstream
+-
+string
+-
+stdio.h
+-
+iostream
+-
+utility
+-
+algorithm
+-
+vector
+-
+iomanip
+-
+
+/Users/lingqiujin/Desktop/testGraph/src/utilities.cpp
+utilities.h
+/Users/lingqiujin/Desktop/testGraph/src/utilities.h
+

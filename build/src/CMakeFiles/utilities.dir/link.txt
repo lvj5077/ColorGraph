@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc ../../lib/libutilities.a  CMakeFiles/utilities.dir/utilities.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib ../../lib/libutilities.a

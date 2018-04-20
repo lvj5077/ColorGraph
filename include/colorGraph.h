@@ -18,4 +18,6 @@
 using namespace boost;
 using namespace std;
 
+
+bool pass(int k,vector< vector<int> > adj_mat, vector<int> color);
 void graphcolor(int nodes_num,int colors_num,vector< vector<int> > adj_mat,vector<int> pre_color);

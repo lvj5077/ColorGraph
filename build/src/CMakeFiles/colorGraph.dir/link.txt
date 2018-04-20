@@ -1,1 +1,2 @@
-g++   -g   CMakeFiles/colorGraph.dir/colorGraph.cpp.o  -o ../../bin/colorGraph  -L"/home/jin/Desktop/testGraph (2)/lib" -rdynamic 
+/Library/Developer/CommandLineTools/usr/bin/ar qc ../../lib/libcolorGraph.a  CMakeFiles/colorGraph.dir/colorGraph.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib ../../lib/libcolorGraph.a

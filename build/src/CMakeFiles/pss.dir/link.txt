@@ -1,1 +1,0 @@
-g++   -g   CMakeFiles/pss.dir/pss.cpp.o  -o ../../bin/pss  -L"/home/jin/Desktop/testGraph (2)/lib" -rdynamic 

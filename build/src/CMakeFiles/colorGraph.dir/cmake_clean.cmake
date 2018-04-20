@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/colorGraph.dir/colorGraph.cpp.o"
-  "../../bin/colorGraph.pdb"
-  "../../bin/colorGraph"
+  "../../lib/libcolorGraph.pdb"
+  "../../lib/libcolorGraph.a"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/jin/Desktop/testGraph (2)/src/colorGraph.cpp
+../include/colorGraph.h
 boost/graph/adjacency_list.hpp
 -
 boost/graph/erdos_renyi_generator.hpp
@@ -14,7 +14,7 @@ boost/graph/erdos_renyi_generator.hpp
 boost/random/linear_congruential.hpp
 -
 boost/graph/graph_traits.hpp
-/home/jin/Desktop/testGraph (2)/src/boost/graph/graph_traits.hpp
+../include/boost/graph/graph_traits.hpp
 fstream
 -
 sstream
@@ -33,4 +33,8 @@ vector
 -
 iomanip
 -
+
+/Users/lingqiujin/Desktop/testGraph/src/colorGraph.cpp
+colorGraph.h
+/Users/lingqiujin/Desktop/testGraph/src/colorGraph.h
 

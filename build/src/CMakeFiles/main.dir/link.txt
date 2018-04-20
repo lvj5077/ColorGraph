@@ -1,0 +1,1 @@
+g++  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/main.dir/main.cpp.o  -o ../../bin/main  -L/Users/lingqiujin/Desktop/testGraph/lib -Wl,-rpath,/Users/lingqiujin/Desktop/testGraph/lib ../../lib/libcolorGraph.a ../../lib/libutilities.a 
