@@ -79,22 +79,22 @@ int main(int argc, char *argv[])
     vector <int> post_color (nodes_num,0);
 
     clock_t tStart = clock();
-    graphcolor(nodes_num,colors_num,adj_mat,pre_color, post_color);
-    // graphcolorOPT(0,nodes_num,colors_num,adj_mat,pre_color,post_color);
+    // bool findResult = graphcolor(nodes_num,colors_num,adj_mat,pre_color, post_color);
+    bool findResult = graphcolorOPT(0,nodes_num,colors_num,adj_mat,pre_color,post_color);
     cout << "Solved in "<< (double)(clock() - tStart)/CLOCKS_PER_SEC << "s \n"<<endl;
 
 
-
-    if (readFromfile){
-        cout << "pre_color: "<<endl;
-        printVecSQ(pre_color);
-        cout << endl<< "post_color: "<<endl;
-        printVecSQ(post_color);   
+    if (findResult){
+        if (readFromfile){
+            cout << "pre_color: "<<endl;
+            printVecSQ(pre_color);
+            cout << endl<< "post_color: "<<endl;
+            printVecSQ(post_color);   
+        }
+        else{
+            printVec(post_color);  
+        }
     }
-    else{
-        printVec(post_color);  
-    }
-
 
     return 0;
 }

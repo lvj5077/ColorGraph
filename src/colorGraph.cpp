@@ -21,7 +21,41 @@ bool pass(int k,vector< vector<int> > adj_mat, vector<int> pre_color, vector<int
 }
 
 
-void graphcolor(int nodes_num,int colors_num,vector< vector<int> > adj_mat,vector<int> pre_color,vector<int> &post_color)
+bool graphcolorOPT(int currNode, int nodes_num,int colors_num,vector< vector<int> > adj_mat,vector<int> pre_color, vector<int> &post_color){
+	bool result = false;
+	cout << "Start: \n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
+	for (int c = 1; c<colors_num;++c){
+		int temp = post_color.at(currNode);
+		post_color.at(currNode) = c;
+		if (pass(currNode,adj_mat, pre_color, post_color)){
+			post_color.at(currNode) = c;
+			if (currNode<(nodes_num-1)){
+				graphcolorOPT(currNode+1,nodes_num,colors_num,adj_mat,pre_color,post_color);
+			}
+			else{
+				result = true;
+				cout << "ok"<<endl;
+				for (int n =0;n<currNode;++n){
+					cout << post_color.at(n)<<" ";
+				}
+
+				return result;
+			}
+		}
+		else{
+			post_color.at(currNode) = temp;
+		}
+
+	}
+	if (!result){
+		cout << "No result by using "<<colors_num<<" color(s)"<<endl;	
+	}
+
+	return result;
+}
+
+
+bool graphcolor(int nodes_num,int colors_num,vector< vector<int> > adj_mat,vector<int> pre_color,vector<int> &post_color)
 {
 	cout << "Start: \n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
 
@@ -84,7 +118,7 @@ void graphcolor(int nodes_num,int colors_num,vector< vector<int> > adj_mat,vecto
 				tsfile.close();
 
 				result = true;
-				break;
+				return result;
 			}
 			else if(post_color.at(k)<=colors_num&&k<nodes_num)
 			   k=k+1;
@@ -104,5 +138,7 @@ void graphcolor(int nodes_num,int colors_num,vector< vector<int> > adj_mat,vecto
 		}
 
 	}
+
+	return result;
 }
 
