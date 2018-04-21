@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/lingqiujin/Desktop/testGraph/src/colorGraph.cpp" "/Users/lingqiujin/Desktop/testGraph/build/src/CMakeFiles/colorGraph.dir/colorGraph.cpp.o"
+  "/Users/lingqiujin/Desktop/ColorGraph/src/colorGraph.cpp" "/Users/lingqiujin/Desktop/ColorGraph/build/src/CMakeFiles/colorGraph.dir/colorGraph.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

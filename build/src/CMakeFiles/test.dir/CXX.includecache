@@ -64,7 +64,7 @@ iomanip
 math.h
 ../include/math.h
 
-/Users/lingqiujin/Desktop/ColorGraph/src/main.cpp
+/Users/lingqiujin/Desktop/ColorGraph/src/test.cpp
 boost/graph/adjacency_list.hpp
 -
 boost/graph/erdos_renyi_generator.hpp

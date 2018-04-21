@@ -61,22 +61,40 @@ int main(int argc, char *argv[])
 
     vector< vector<int> > adj_mat( nodes_num , vector<int>(nodes_num,0) );
 
-    cout << "\nEdges: \n";
+    // cout << "\nEdges: \n";
     pair<edge_iterator, edge_iterator> ei = edges(g);
     for(edge_iterator edge_iter = ei.first; edge_iter != ei.second; ++edge_iter) {
     // note: vector index from 0 but we index node from 1 conventionally
-        cout << "(" << setw( 4 )<< source(*edge_iter, g) +1  << ", " << setw( 4 )<< target(*edge_iter, g) +1 << ")\n";
+        // cout << "(" << setw( 4 )<< source(*edge_iter, g) +1  << ", " << setw( 4 )<< target(*edge_iter, g) +1 << ")\n";
         adj_mat.at(source(*edge_iter, g)  ).at(target(*edge_iter, g)  ) = 1;
         adj_mat.at(target(*edge_iter, g)  ).at(source(*edge_iter, g)  ) = 1;
     }
     cout << "\n";
 
 
-    cout << "\nAdjacency Matrix: \n";
-    printMat (adj_mat);
+    // cout << "\nAdjacency Matrix: \n";
+    // printMat (adj_mat);
 
     int colors_num = nodes_num; // wrost case, all nodes have different colors
-    graphcolor(nodes_num,colors_num,adj_mat,pre_color);
+    vector <int> post_color (nodes_num,0);
+
+    clock_t tStart = clock();
+    graphcolor(nodes_num,colors_num,adj_mat,pre_color, post_color);
+    // graphcolorOPT(0,nodes_num,colors_num,adj_mat,pre_color,post_color);
+    cout << "Solved in "<< (double)(clock() - tStart)/CLOCKS_PER_SEC << "s \n"<<endl;
+
+
+
+    if (readFromfile){
+        cout << "pre_color: "<<endl;
+        printVecSQ(pre_color);
+        cout << endl<< "post_color: "<<endl;
+        printVecSQ(post_color);   
+    }
+    else{
+        printVec(post_color);  
+    }
+
 
     return 0;
 }

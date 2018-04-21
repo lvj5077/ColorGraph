@@ -1,7 +1,8 @@
-/Users/lingqiujin/Desktop/testGraph/build/CMakeFiles/rebuild_cache.dir
-/Users/lingqiujin/Desktop/testGraph/build/CMakeFiles/edit_cache.dir
-/Users/lingqiujin/Desktop/testGraph/build/src/CMakeFiles/main.dir
-/Users/lingqiujin/Desktop/testGraph/build/src/CMakeFiles/rebuild_cache.dir
-/Users/lingqiujin/Desktop/testGraph/build/src/CMakeFiles/edit_cache.dir
-/Users/lingqiujin/Desktop/testGraph/build/src/CMakeFiles/utilities.dir
-/Users/lingqiujin/Desktop/testGraph/build/src/CMakeFiles/colorGraph.dir
+/Users/lingqiujin/Desktop/ColorGraph/build/CMakeFiles/rebuild_cache.dir
+/Users/lingqiujin/Desktop/ColorGraph/build/CMakeFiles/edit_cache.dir
+/Users/lingqiujin/Desktop/ColorGraph/build/src/CMakeFiles/rebuild_cache.dir
+/Users/lingqiujin/Desktop/ColorGraph/build/src/CMakeFiles/utilities.dir
+/Users/lingqiujin/Desktop/ColorGraph/build/src/CMakeFiles/test.dir
+/Users/lingqiujin/Desktop/ColorGraph/build/src/CMakeFiles/main.dir
+/Users/lingqiujin/Desktop/ColorGraph/build/src/CMakeFiles/edit_cache.dir
+/Users/lingqiujin/Desktop/ColorGraph/build/src/CMakeFiles/colorGraph.dir

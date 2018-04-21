@@ -14,6 +14,8 @@
 #include <vector>
 #include <iomanip>
 
+#include "math.h"
+
 using namespace boost;
 using namespace std;
 
@@ -24,6 +26,7 @@ typedef graph_traits<UndirectedGraph>::edge_iterator edge_iterator;
 
 void printMat(vector< vector<int> > mat);
 void printVec(vector<int> vec);
+void printVecSQ(vector<int> vec);
 
 bool graphFromFile(string filename, UndirectedGraph &g,vector<int> &pre_color, int &nodes_num);
 bool graphFromNode(int nodes_num, UndirectedGraph &g,vector<int> &pre_color);

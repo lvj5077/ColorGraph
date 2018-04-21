@@ -1,4 +1,4 @@
-# Install script for directory: /Users/lingqiujin/Desktop/testGraph/src
+# Install script for directory: /Users/lingqiujin/Desktop/ColorGraph/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

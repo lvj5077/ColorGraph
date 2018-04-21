@@ -48,10 +48,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/lingqiujin/Desktop/testGraph
+CMAKE_SOURCE_DIR = /Users/lingqiujin/Desktop/ColorGraph
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/lingqiujin/Desktop/testGraph/build
+CMAKE_BINARY_DIR = /Users/lingqiujin/Desktop/ColorGraph/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/lingqiujin/Desktop/testGraph/build/CMakeFiles /Users/lingqiujin/Desktop/testGraph/build/src/CMakeFiles/progress.marks
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lingqiujin/Desktop/testGraph/build/CMakeFiles 0
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/lingqiujin/Desktop/ColorGraph/build/CMakeFiles /Users/lingqiujin/Desktop/ColorGraph/build/src/CMakeFiles/progress.marks
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lingqiujin/Desktop/ColorGraph/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,37 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/main.dir/rule:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/rule
-.PHONY : src/CMakeFiles/main.dir/rule
-
-# Convenience name for target.
-main: src/CMakeFiles/main.dir/rule
-
-.PHONY : main
-
-# fast build rule for target.
-main/fast:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
-.PHONY : main/fast
-
-# Convenience name for target.
 src/CMakeFiles/utilities.dir/rule:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/utilities.dir/rule
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/utilities.dir/rule
 .PHONY : src/CMakeFiles/utilities.dir/rule
 
 # Convenience name for target.
@@ -137,12 +122,42 @@ utilities: src/CMakeFiles/utilities.dir/rule
 
 # fast build rule for target.
 utilities/fast:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f src/CMakeFiles/utilities.dir/build.make src/CMakeFiles/utilities.dir/build
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/utilities.dir/build.make src/CMakeFiles/utilities.dir/build
 .PHONY : utilities/fast
 
 # Convenience name for target.
+src/CMakeFiles/test.dir/rule:
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/test.dir/rule
+.PHONY : src/CMakeFiles/test.dir/rule
+
+# Convenience name for target.
+test: src/CMakeFiles/test.dir/rule
+
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/test.dir/build.make src/CMakeFiles/test.dir/build
+.PHONY : test/fast
+
+# Convenience name for target.
+src/CMakeFiles/main.dir/rule:
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/rule
+.PHONY : src/CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: src/CMakeFiles/main.dir/rule
+
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+# Convenience name for target.
 src/CMakeFiles/colorGraph.dir/rule:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/colorGraph.dir/rule
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/colorGraph.dir/rule
 .PHONY : src/CMakeFiles/colorGraph.dir/rule
 
 # Convenience name for target.
@@ -152,7 +167,7 @@ colorGraph: src/CMakeFiles/colorGraph.dir/rule
 
 # fast build rule for target.
 colorGraph/fast:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f src/CMakeFiles/colorGraph.dir/build.make src/CMakeFiles/colorGraph.dir/build
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/colorGraph.dir/build.make src/CMakeFiles/colorGraph.dir/build
 .PHONY : colorGraph/fast
 
 colorGraph.o: colorGraph.cpp.o
@@ -161,7 +176,7 @@ colorGraph.o: colorGraph.cpp.o
 
 # target to build an object file
 colorGraph.cpp.o:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f src/CMakeFiles/colorGraph.dir/build.make src/CMakeFiles/colorGraph.dir/colorGraph.cpp.o
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/colorGraph.dir/build.make src/CMakeFiles/colorGraph.dir/colorGraph.cpp.o
 .PHONY : colorGraph.cpp.o
 
 colorGraph.i: colorGraph.cpp.i
@@ -170,7 +185,7 @@ colorGraph.i: colorGraph.cpp.i
 
 # target to preprocess a source file
 colorGraph.cpp.i:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f src/CMakeFiles/colorGraph.dir/build.make src/CMakeFiles/colorGraph.dir/colorGraph.cpp.i
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/colorGraph.dir/build.make src/CMakeFiles/colorGraph.dir/colorGraph.cpp.i
 .PHONY : colorGraph.cpp.i
 
 colorGraph.s: colorGraph.cpp.s
@@ -179,7 +194,7 @@ colorGraph.s: colorGraph.cpp.s
 
 # target to generate assembly for a file
 colorGraph.cpp.s:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f src/CMakeFiles/colorGraph.dir/build.make src/CMakeFiles/colorGraph.dir/colorGraph.cpp.s
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/colorGraph.dir/build.make src/CMakeFiles/colorGraph.dir/colorGraph.cpp.s
 .PHONY : colorGraph.cpp.s
 
 main.o: main.cpp.o
@@ -188,7 +203,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.o
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -197,7 +212,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.i
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -206,8 +221,35 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.s
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+test.o: test.cpp.o
+
+.PHONY : test.o
+
+# target to build an object file
+test.cpp.o:
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/test.dir/build.make src/CMakeFiles/test.dir/test.cpp.o
+.PHONY : test.cpp.o
+
+test.i: test.cpp.i
+
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/test.dir/build.make src/CMakeFiles/test.dir/test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/test.dir/build.make src/CMakeFiles/test.dir/test.cpp.s
+.PHONY : test.cpp.s
 
 utilities.o: utilities.cpp.o
 
@@ -215,7 +257,7 @@ utilities.o: utilities.cpp.o
 
 # target to build an object file
 utilities.cpp.o:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f src/CMakeFiles/utilities.dir/build.make src/CMakeFiles/utilities.dir/utilities.cpp.o
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/utilities.dir/build.make src/CMakeFiles/utilities.dir/utilities.cpp.o
 .PHONY : utilities.cpp.o
 
 utilities.i: utilities.cpp.i
@@ -224,7 +266,7 @@ utilities.i: utilities.cpp.i
 
 # target to preprocess a source file
 utilities.cpp.i:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f src/CMakeFiles/utilities.dir/build.make src/CMakeFiles/utilities.dir/utilities.cpp.i
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/utilities.dir/build.make src/CMakeFiles/utilities.dir/utilities.cpp.i
 .PHONY : utilities.cpp.i
 
 utilities.s: utilities.cpp.s
@@ -233,7 +275,7 @@ utilities.s: utilities.cpp.s
 
 # target to generate assembly for a file
 utilities.cpp.s:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(MAKE) -f src/CMakeFiles/utilities.dir/build.make src/CMakeFiles/utilities.dir/utilities.cpp.s
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/utilities.dir/build.make src/CMakeFiles/utilities.dir/utilities.cpp.s
 .PHONY : utilities.cpp.s
 
 # Help Target
@@ -242,10 +284,11 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... main"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... utilities"
+	@echo "... test"
+	@echo "... main"
+	@echo "... edit_cache"
 	@echo "... colorGraph"
 	@echo "... colorGraph.o"
 	@echo "... colorGraph.i"
@@ -253,6 +296,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 	@echo "... utilities.o"
 	@echo "... utilities.i"
 	@echo "... utilities.s"
@@ -267,6 +313,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/lingqiujin/Desktop/testGraph/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

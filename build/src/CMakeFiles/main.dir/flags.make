@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/lingqiujin/Desktop/testGraph/include 
+CXX_INCLUDES = -I/Users/lingqiujin/Desktop/ColorGraph/include 
 

@@ -19,6 +19,20 @@ void printVec( vector<int> vec){
     for(int i=0; i<vec.size(); ++i)                 
     {                                        
         cout << setw( 4 )<< vec.at(i) << " ";
+    }
+    cout << endl;
+}
+
+void printVecSQ( vector<int> vec){
+
+    int sqroot = sqrt(vec.size()) ;
+    for(int i=0; i<vec.size(); ++i)                 
+    {                                        
+        cout << setw( 4 )<< vec.at(i) << " ";
+        if (sqroot*sqroot == vec.size()){
+            if (  (i+1) %sqroot == 0  )
+                cout << endl;
+        }
 	}
 	cout << endl;
 }
@@ -43,7 +57,7 @@ bool graphFromFile(string filename, UndirectedGraph &g, vector<int> &pre_color, 
         }
         else{
             if (lineNum > edges_num){
-                pre_color = vector<int> (nodes_num,1);
+                pre_color = vector<int> (nodes_num,0);
 		        for (int i=0;i<nodes_num;++i){
 		            ss >> pre_color.at(i) ;
 		        }
@@ -71,7 +85,7 @@ bool graphFromFile(string filename, UndirectedGraph &g, vector<int> &pre_color, 
 bool graphFromNode(int nodes_num, UndirectedGraph &g, vector<int> &pre_color){
     minstd_rand gen;
     g = UndirectedGraph (ERGen(gen, nodes_num, 0.5), ERGen(),nodes_num);
-    pre_color = vector<int>  (nodes_num,1);
+    pre_color = vector<int>  (nodes_num,0);
     if (num_edges(g) != 0){
         cout << "\nRandom graph from nodes: \n";
         // cout << "\nNode number: "<< nodes_num ;
