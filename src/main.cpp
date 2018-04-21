@@ -79,8 +79,8 @@ int main(int argc, char *argv[])
     vector <int> post_color (nodes_num,0);
 
     clock_t tStart = clock();
-    // bool findResult = graphcolor(nodes_num,colors_num,adj_mat,pre_color, post_color);
-    bool findResult = graphcolorOPT(0,nodes_num,colors_num,adj_mat,pre_color,post_color);
+    bool findResult = graphcolor(nodes_num,colors_num,adj_mat,pre_color, post_color);
+    // bool findResult = graphcolorOPT(0,nodes_num,colors_num,adj_mat,pre_color,post_color);
     cout << "Solved in "<< (double)(clock() - tStart)/CLOCKS_PER_SEC << "s \n"<<endl;
 
 

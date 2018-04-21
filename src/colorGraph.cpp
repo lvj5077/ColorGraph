@@ -5,15 +5,15 @@ using namespace std;
 
 bool pass(int k,vector< vector<int> > adj_mat, vector<int> pre_color, vector<int> post_color)
 {
-	if(post_color.at(k)==0){
-		return false;
-	}
-	if(post_color.at(k)!=pre_color.at(k) && pre_color.at(k)!=0){
-		return false;
-	}
 	for(int i=0;i<k;++i)
 	{
 		if(adj_mat.at(k).at(i) ==1&&post_color.at(i)==post_color.at(k)){
+			return false;
+		}
+		if(post_color.at(i)==0){
+			return false;
+		}
+		if(post_color.at(i)!=pre_color.at(i) && pre_color.at(i)!=0){
 			return false;
 		}
 	}
@@ -80,15 +80,6 @@ bool graphcolor(int nodes_num,int colors_num,vector< vector<int> > adj_mat,vecto
 		while(!result)
 		{
 			post_color.at(k)=post_color.at(k)+1;
-			int top_pre_color = 1;
-		   	for (int i=0;i<nodes_num;++i){
-		   		if (pre_color.at(i)>0){
-					post_color.at(i) = pre_color.at(i);
-					if (top_pre_color < pre_color.at(i)) {
-						top_pre_color = pre_color.at(i);
-					}
-		   		}
-			}
 
 			while(post_color.at(k)<=colors_num)
 				if(pass(k,adj_mat,pre_color,post_color)) 
@@ -124,12 +115,12 @@ bool graphcolor(int nodes_num,int colors_num,vector< vector<int> > adj_mat,vecto
 			   k=k+1;
 			else
 			{
-			 post_color.at(k)=0;
-			 k=k-1;
-			 if (k<0){
-			 	cout << "No solution by using "<< colors_used << " color(s)" <<endl;
-			 	break;
-			 }
+				post_color.at(k)=0;
+				k=k-1;
+				if (k<0){
+					cout << "No solution by using "<< colors_used << " color(s)" <<endl;
+					break;
+				}
 			}
 		}
 
