@@ -1,4 +1,5 @@
 #include "colorGraph.h"
+#include "utilities.h"
 
 using namespace boost;
 using namespace std;
@@ -18,10 +19,8 @@ bool pass(int k,vector< vector<int> > adj_mat, vector<int> pre_color, vector<int
 		}
 	}
 
-	// for(int i=0;i<k;++i)
-	// {
-	// 	cout << post_color.at(i) << " ";
-	// }
+	// printVecSQ(post_color);
+	// cout << "pass"<<endl;
 	return true;
 }
 
@@ -29,7 +28,7 @@ bool pass(int k,vector< vector<int> > adj_mat, vector<int> pre_color, vector<int
 bool graphcolorOPT(int currNode, int nodes_num,int colors_num,vector< vector<int> > adj_mat,vector<int> pre_color, vector<int> &post_color){
 	bool result = false;
 	cout << "Start: \n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
-	for (int c = 1; c<colors_num;++c){
+	for (int c = 1; c<colors_num+1;++c){
 		int temp = post_color.at(currNode);
 		post_color.at(currNode) = c;
 		if (pass(currNode,adj_mat, pre_color, post_color)){
@@ -39,11 +38,8 @@ bool graphcolorOPT(int currNode, int nodes_num,int colors_num,vector< vector<int
 			}
 			else{
 				result = true;
-				cout << "ok"<<endl;
-				for (int n =0;n<currNode;++n){
-					cout << post_color.at(n)<<" ";
-				}
-
+				cout << "ok "<<currNode<<endl;
+				printVecSQ(post_color);
 				return result;
 			}
 		}
@@ -53,7 +49,7 @@ bool graphcolorOPT(int currNode, int nodes_num,int colors_num,vector< vector<int
 
 	}
 	if (!result){
-		cout << "No result by using "<<colors_num<<" color(s)"<<endl;	
+		cout << "No result of solving "<<currNode<<" node(s)"<<endl;	
 	}
 
 	return result;
@@ -76,7 +72,7 @@ bool graphcolor(int nodes_num,int colors_num,vector< vector<int> > adj_mat,vecto
 	int k=0;
 	bool result = false;
 
-	for (int c = 1;c<colors_num;++c){
+	for (int c = 1;c<colors_num+1;++c){
 		int colors_used = c;
 
 		cout << "colors_used: "<< c<<endl;

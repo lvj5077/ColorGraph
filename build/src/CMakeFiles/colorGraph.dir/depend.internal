@@ -3,4 +3,5 @@
 
 src/CMakeFiles/colorGraph.dir/colorGraph.cpp.o
  ../include/colorGraph.h
+ ../include/utilities.h
  /Users/lingqiujin/Desktop/ColorGraph/src/colorGraph.cpp

@@ -192,8 +192,8 @@ CMAKE_STRIP:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Dependencies for target
-colorGraph_LIB_DEPENDS:STATIC=
+//Dependencies for the target
+colorGraph_LIB_DEPENDS:STATIC=general;utilities;
 
 //Value Computed by CMake
 test_graph_BINARY_DIR:STATIC=/Users/lingqiujin/Desktop/ColorGraph/build
