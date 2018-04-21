@@ -17,6 +17,11 @@ bool pass(int k,vector< vector<int> > adj_mat, vector<int> pre_color, vector<int
 			return false;
 		}
 	}
+
+	// for(int i=0;i<k;++i)
+	// {
+	// 	cout << post_color.at(i) << " ";
+	// }
 	return true;
 }
 
@@ -81,12 +86,13 @@ bool graphcolor(int nodes_num,int colors_num,vector< vector<int> > adj_mat,vecto
 		{
 			post_color.at(k)=post_color.at(k)+1;
 
-			while(post_color.at(k)<=colors_num)
+			while(post_color.at(k)<=colors_used){
 				if(pass(k,adj_mat,pre_color,post_color)) 
 					break;
 			   else 
 					post_color.at(k)=post_color.at(k)+1;
-			if(post_color.at(k)<=colors_num&& k==(nodes_num-1) )
+			}
+			if(post_color.at(k)<=colors_used&& k==(nodes_num-1) )
 			{
 				int top_post_color = 1;
 			   	for (int i=0;i<nodes_num;++i){
@@ -111,14 +117,15 @@ bool graphcolor(int nodes_num,int colors_num,vector< vector<int> > adj_mat,vecto
 				result = true;
 				return result;
 			}
-			else if(post_color.at(k)<=colors_num&&k<nodes_num)
+			else if(post_color.at(k)<=colors_used&&k<nodes_num){
 			   k=k+1;
+			}
 			else
 			{
 				post_color.at(k)=0;
 				k=k-1;
 				if (k<0){
-					cout << "No solution by using "<< colors_used << " color(s)" <<endl;
+					cout << "No solution by using "<< colors_used << " color(s)" <<endl<<endl;
 					break;
 				}
 			}

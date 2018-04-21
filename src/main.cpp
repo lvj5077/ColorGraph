@@ -72,8 +72,8 @@ int main(int argc, char *argv[])
     cout << "\n";
 
 
-    // cout << "\nAdjacency Matrix: \n";
-    // printMat (adj_mat);
+    cout << "\nAdjacency Matrix: \n";
+    printMat (adj_mat);
 
     int colors_num = nodes_num; // wrost case, all nodes have different colors
     vector <int> post_color (nodes_num,0);
