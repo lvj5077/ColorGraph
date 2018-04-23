@@ -6,10 +6,12 @@ using namespace std;
 
 bool pass(int k,vector< vector<int> > adj_mat, vector<int> pre_color, vector<int> post_color)
 {
-	for(int i=0;i<k;++i)
+	for(int i=0;i<k+1;++i)
 	{
-		if(adj_mat.at(k).at(i) ==1&&post_color.at(i)==post_color.at(k)){
-			return false;
+		for (int j=0;j<k;++j){
+			if(adj_mat.at(i).at(j) ==1&&post_color.at(i)==post_color.at(j)){
+				return false;
+			}
 		}
 		if(post_color.at(i)==0){
 			return false;
@@ -18,39 +20,36 @@ bool pass(int k,vector< vector<int> > adj_mat, vector<int> pre_color, vector<int
 			return false;
 		}
 	}
-
-	// printVecSQ(post_color);
-	// cout << "pass"<<endl;
 	return true;
 }
 
 
 bool graphcolorOPT(int currNode, int nodes_num,int colors_num,vector< vector<int> > adj_mat,vector<int> pre_color, vector<int> &post_color){
 	bool result = false;
-	cout << "Start: \n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
-	for (int c = 1; c<colors_num+1;++c){
-		int temp = post_color.at(currNode);
-		post_color.at(currNode) = c;
-		if (pass(currNode,adj_mat, pre_color, post_color)){
-			post_color.at(currNode) = c;
-			if (currNode<(nodes_num-1)){
-				graphcolorOPT(currNode+1,nodes_num,colors_num,adj_mat,pre_color,post_color);
-			}
-			else{
-				result = true;
-				cout << "ok "<<currNode<<endl;
-				printVecSQ(post_color);
-				return result;
-			}
-		}
-		else{
-			post_color.at(currNode) = temp;
-		}
+	// cout << "Start: \n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
+	// for (int c = 1; c<colors_num+1;++c){
+	// 	int temp = post_color.at(currNode);
+	// 	post_color.at(currNode) = c;
+	// 	if (pass(currNode,adj_mat, pre_color, post_color)){
+	// 		post_color.at(currNode) = c;
+	// 		if (currNode<(nodes_num-1)){
+	// 			graphcolorOPT(currNode+1,nodes_num,colors_num,adj_mat,pre_color,post_color);
+	// 		}
+	// 		else{
+	// 			result = true;
+	// 			cout << "ok "<<currNode<<endl;
+	// 			printVecSQ(post_color);
+	// 			return result;
+	// 		}
+	// 	}
+	// 	else{
+	// 		post_color.at(currNode) = temp;
+	// 	}
 
-	}
-	if (!result){
-		cout << "No result of solving "<<currNode<<" node(s)"<<endl;	
-	}
+	// }
+	// if (!result){
+	// 	cout << "No result of solving "<<currNode<<" node(s)"<<endl;	
+	// }
 
 	return result;
 }
@@ -88,6 +87,8 @@ bool graphcolor(int nodes_num,int colors_num,vector< vector<int> > adj_mat,vecto
 			   else 
 					post_color.at(k)=post_color.at(k)+1;
 			}
+			// cout << "k: "<<k+1<<endl;
+			// printVecSQ(post_color);
 			if(post_color.at(k)<=colors_used&& k==(nodes_num-1) )
 			{
 				int top_post_color = 1;

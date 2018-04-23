@@ -75,19 +75,21 @@ int main(int argc, char *argv[])
     // cout << "\nAdjacency Matrix: \n";
     // printMat (adj_mat);
 
+    
+    cout << "pre_color: "<<endl;
+    printVecSQ(pre_color);
+
     int colors_num = nodes_num; // wrost case, all nodes have different colors
     vector <int> post_color (nodes_num,0);
 
     clock_t tStart = clock();
-    // bool findResult = graphcolor(nodes_num,colors_num,adj_mat,pre_color, post_color);
-    bool findResult = graphcolorOPT(0,nodes_num,colors_num,adj_mat,pre_color,post_color);
+    bool findResult = graphcolor(nodes_num,colors_num,adj_mat,pre_color, post_color);
+    // bool findResult = graphcolorOPT(0,nodes_num,colors_num,adj_mat,pre_color,post_color);
     cout << "Solved in "<< (double)(clock() - tStart)/CLOCKS_PER_SEC << "s \n"<<endl;
 
 
     if (findResult){
         if (readFromfile){
-            cout << "pre_color: "<<endl;
-            printVecSQ(pre_color);
             cout << endl<< "post_color: "<<endl;
             printVecSQ(post_color);   
         }
