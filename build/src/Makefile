@@ -111,6 +111,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+src/CMakeFiles/input.dir/rule:
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/input.dir/rule
+.PHONY : src/CMakeFiles/input.dir/rule
+
+# Convenience name for target.
+input: src/CMakeFiles/input.dir/rule
+
+.PHONY : input
+
+# fast build rule for target.
+input/fast:
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/input.dir/build.make src/CMakeFiles/input.dir/build
+.PHONY : input/fast
+
+# Convenience name for target.
 src/CMakeFiles/utilities.dir/rule:
 	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/utilities.dir/rule
 .PHONY : src/CMakeFiles/utilities.dir/rule
@@ -196,6 +211,33 @@ colorGraph.s: colorGraph.cpp.s
 colorGraph.cpp.s:
 	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/colorGraph.dir/build.make src/CMakeFiles/colorGraph.dir/colorGraph.cpp.s
 .PHONY : colorGraph.cpp.s
+
+input.o: input.cpp.o
+
+.PHONY : input.o
+
+# target to build an object file
+input.cpp.o:
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/input.dir/build.make src/CMakeFiles/input.dir/input.cpp.o
+.PHONY : input.cpp.o
+
+input.i: input.cpp.i
+
+.PHONY : input.i
+
+# target to preprocess a source file
+input.cpp.i:
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/input.dir/build.make src/CMakeFiles/input.dir/input.cpp.i
+.PHONY : input.cpp.i
+
+input.s: input.cpp.s
+
+.PHONY : input.s
+
+# target to generate assembly for a file
+input.cpp.s:
+	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/input.dir/build.make src/CMakeFiles/input.dir/input.cpp.s
+.PHONY : input.cpp.s
 
 main.o: main.cpp.o
 
@@ -285,14 +327,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... input"
 	@echo "... utilities"
 	@echo "... test"
 	@echo "... main"
-	@echo "... edit_cache"
 	@echo "... colorGraph"
 	@echo "... colorGraph.o"
 	@echo "... colorGraph.i"
 	@echo "... colorGraph.s"
+	@echo "... input.o"
+	@echo "... input.i"
+	@echo "... input.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named input
+
+# Build rule for target.
+input: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 input
+.PHONY : input
+
+# fast build rule for target.
+input/fast:
+	$(MAKE) -f src/CMakeFiles/input.dir/build.make src/CMakeFiles/input.dir/build
+.PHONY : input/fast
+
+#=============================================================================
 # Target rules for targets named utilities
 
 # Build rule for target.
@@ -170,6 +183,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... input"
 	@echo "... utilities"
 	@echo "... test"
 	@echo "... main"

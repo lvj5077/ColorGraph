@@ -1,0 +1,1 @@
+g++   -Wall -std=gnu++0x -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/input.dir/input.cpp.o  -o ../../bin/input  -L/Users/lingqiujin/Desktop/ColorGraph/lib 

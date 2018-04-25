@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/lingqiujin/Desktop/ColorGraph/src/input.cpp
+iostream
+-
+utility
+-
+algorithm
+-
+vector
+-
+iostream
+-
+fstream
+-
+sstream
+-
+iomanip
+-
+typeinfo
+-
+boost/graph/graph_traits.hpp
+/Users/lingqiujin/Desktop/ColorGraph/src/boost/graph/graph_traits.hpp
+boost/graph/adjacency_list.hpp
+/Users/lingqiujin/Desktop/ColorGraph/src/boost/graph/adjacency_list.hpp
+
