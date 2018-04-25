@@ -95,7 +95,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    cout << "\nMaxmimum degree: "<< max_degree << "\n";
+    cout << "Maximum  degree: "<< max_degree << "\n";
 
     int colors_num = nodes_num; // wrost case, all nodes have different colors
     vector <int> post_color (nodes_num,0);
