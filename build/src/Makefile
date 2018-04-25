@@ -111,21 +111,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/test2.dir/rule:
-	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/test2.dir/rule
-.PHONY : src/CMakeFiles/test2.dir/rule
-
-# Convenience name for target.
-test2: src/CMakeFiles/test2.dir/rule
-
-.PHONY : test2
-
-# fast build rule for target.
-test2/fast:
-	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/test2.dir/build.make src/CMakeFiles/test2.dir/build
-.PHONY : test2/fast
-
-# Convenience name for target.
 src/CMakeFiles/input.dir/rule:
 	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/input.dir/rule
 .PHONY : src/CMakeFiles/input.dir/rule
@@ -308,33 +293,6 @@ test.cpp.s:
 	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/test.dir/build.make src/CMakeFiles/test.dir/test.cpp.s
 .PHONY : test.cpp.s
 
-test2.o: test2.cpp.o
-
-.PHONY : test2.o
-
-# target to build an object file
-test2.cpp.o:
-	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/test2.dir/build.make src/CMakeFiles/test2.dir/test2.cpp.o
-.PHONY : test2.cpp.o
-
-test2.i: test2.cpp.i
-
-.PHONY : test2.i
-
-# target to preprocess a source file
-test2.cpp.i:
-	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/test2.dir/build.make src/CMakeFiles/test2.dir/test2.cpp.i
-.PHONY : test2.cpp.i
-
-test2.s: test2.cpp.s
-
-.PHONY : test2.s
-
-# target to generate assembly for a file
-test2.cpp.s:
-	cd /Users/lingqiujin/Desktop/ColorGraph/build && $(MAKE) -f src/CMakeFiles/test2.dir/build.make src/CMakeFiles/test2.dir/test2.cpp.s
-.PHONY : test2.cpp.s
-
 utilities.o: utilities.cpp.o
 
 .PHONY : utilities.o
@@ -370,7 +328,6 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test2"
 	@echo "... input"
 	@echo "... utilities"
 	@echo "... test"
@@ -388,9 +345,6 @@ help:
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"
-	@echo "... test2.o"
-	@echo "... test2.i"
-	@echo "... test2.s"
 	@echo "... utilities.o"
 	@echo "... utilities.i"
 	@echo "... utilities.s"

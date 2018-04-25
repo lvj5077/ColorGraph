@@ -2,7 +2,6 @@
 /Users/lingqiujin/Desktop/ColorGraph/build/CMakeFiles/edit_cache.dir
 /Users/lingqiujin/Desktop/ColorGraph/build/src/CMakeFiles/rebuild_cache.dir
 /Users/lingqiujin/Desktop/ColorGraph/build/src/CMakeFiles/edit_cache.dir
-/Users/lingqiujin/Desktop/ColorGraph/build/src/CMakeFiles/test2.dir
 /Users/lingqiujin/Desktop/ColorGraph/build/src/CMakeFiles/input.dir
 /Users/lingqiujin/Desktop/ColorGraph/build/src/CMakeFiles/utilities.dir
 /Users/lingqiujin/Desktop/ColorGraph/build/src/CMakeFiles/test.dir
