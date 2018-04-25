@@ -76,7 +76,6 @@ int main(int argc, char *argv[])
         adj_mat.at(source(*edge_iter, g)  ).at(target(*edge_iter, g)  ) = 1;
         adj_mat.at(target(*edge_iter, g)  ).at(source(*edge_iter, g)  ) = 1;
     }
-    cout << "\n";
 
 
     // cout << "\nAdjacency Matrix: \n";
@@ -95,7 +94,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    cout << "Maximum  degree: "<< max_degree << "\n";
+    cout << "Maximum degree: "<< max_degree << "\n\n";
 
     int colors_num = nodes_num; // wrost case, all nodes have different colors
     vector <int> post_color (nodes_num,0);
