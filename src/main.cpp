@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
     int readFromfile = true;
     string filename;
 
+    int minColor = 0;
     if (argc >= 2) {
         nodes_num = atoi(argv[1]);
         if (nodes_num != 0 ){
@@ -38,10 +39,16 @@ int main(int argc, char *argv[])
         else{
             filename = argv[1];
         }
+
+        if (argc >= 3){
+            minColor = atoi(argv[2]);
+        }
+
     }
     else{
         cout << "Please define a node number to create a random graph or provide an input text file"<<endl;
-        cout << "e.g.: ./colorGraph 9   or      ./colorGraph inputfile.txt"<<endl;
+        cout << "e.g.: ./colorGraph 9  opt or      ./colorGraph inputfile.txt opt"<<endl;
+        cout << "Option: try to find the minimum color when opt set to be 1"<<endl;
         return 0;
     }
 
@@ -75,41 +82,63 @@ int main(int argc, char *argv[])
     // cout << "\nAdjacency Matrix: \n";
     // printMat (adj_mat);
 
+    int max_degree =0;
+    for (int x=0;x<nodes_num;++x){
+        int degree =0;
+        for (int y=0;y<nodes_num;++y){
+            if ( adj_mat.at(x).at(y) == 1){
+                degree = degree+1;
+            }
+        }
+        if (max_degree<degree){
+            max_degree = degree;
+        }
+    }
 
-
-    
+    cout << "\nMaxmimum degree: "<< max_degree << "\n";
 
     int colors_num = nodes_num; // wrost case, all nodes have different colors
     vector <int> post_color (nodes_num,0);
 
     bool findResult = false;
     clock_t tStart = clock();
-    int testloop = 1;
+    int testloop = 10;
     for (int l=0;l<testloop;++l){
         cout << "test loop: "<< l+1<<endl;
         post_color = vector <int>(nodes_num,0);
-        // findResult = graphcolorOPT(nodes_num,adj_mat,pre_color, post_color); 
-        findResult = graphcolor(nodes_num,colors_num,adj_mat,pre_color, post_color); 
+        if (minColor){
+            findResult = graphcolorOPT(nodes_num,adj_mat,pre_color, post_color);
+        }
+        else{
+            findResult = graphcolor(nodes_num,colors_num,adj_mat,pre_color, post_color); 
+        }  
         if (!findResult){
             cout <<"Fails"<<endl;
             break;
         }
     }
-    cout << "Solved in "<< (double)(clock() - tStart)/(testloop*CLOCKS_PER_SEC) << "s \n"<<endl;
+
+
+    double timeusage = (double)(clock() - tStart)/(testloop*CLOCKS_PER_SEC);
+    
 
 
     if (findResult){
-        cout << "pre_color: "<<endl;
         if (readFromfile){
+            cout << "pre_color: "<<endl;
             printVecSQ(pre_color);
             cout << endl<< "post_color: "<<endl;
             printVecSQ(post_color);   
         }
         else{
-            printVec(pre_color);
             cout << endl<< "post_color: "<<endl;
             printVec(post_color);  
         }
+
+        cout << "Solved in "<< timeusage << "s \n"<<endl;
+    }
+    else{
+        cout << "Can't solve the graph!"<<endl;
     }
 
     return 0;

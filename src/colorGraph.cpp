@@ -139,7 +139,6 @@ bool graphcolorOPT(int nodes_num,vector< vector<int> > adj_mat,vector<int> pre_c
 		}
 	}
 	bool result = false;
-
 	while(!result && colors_used<=nodes_num){
 		result = graphcolor(nodes_num,colors_used,adj_mat,pre_color, post_color); 
 		colors_used = colors_used+1;
