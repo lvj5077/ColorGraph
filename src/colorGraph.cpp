@@ -6,134 +6,144 @@ using namespace std;
 
 bool pass(int k,vector< vector<int> > adj_mat, vector<int> pre_color, vector<int> post_color)
 {
-	for(int i=0;i<k+1;++i)
+	// cout << "test: "<<endl;
+	// printVecSQ(pre_color);
+	// printVecSQ(post_color);
+	for(int i=0;i<k;++i)
 	{
-		for (int j=0;j<k;++j){
-			if(adj_mat.at(i).at(j) ==1&&post_color.at(i)==post_color.at(j)){
+		if (post_color.at(i)!=0){
+			for (int j=0;j<k;++j){
+				if(adj_mat.at(i).at(j) ==1){
+					if ( post_color.at(j)!=0 && post_color.at(i)==post_color.at(j) )
+						return false;
+					if (pre_color.at(j)!=0 && post_color.at(i)==pre_color.at(j))
+						return false;
+				}
+			}
+			if(post_color.at(i)!=pre_color.at(i) && pre_color.at(i)!=0 ){
 				return false;
 			}
-		}
-		if(post_color.at(i)==0){
-			return false;
-		}
-		if(post_color.at(i)!=pre_color.at(i) && pre_color.at(i)!=0){
-			return false;
 		}
 	}
 	return true;
 }
 
 
-bool graphcolorOPT(int currNode, int nodes_num,int colors_num,vector< vector<int> > adj_mat,vector<int> pre_color, vector<int> &post_color){
-	bool result = false;
-	// cout << "Start: \n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
-	// for (int c = 1; c<colors_num+1;++c){
-	// 	int temp = post_color.at(currNode);
-	// 	post_color.at(currNode) = c;
-	// 	if (pass(currNode,adj_mat, pre_color, post_color)){
-	// 		post_color.at(currNode) = c;
-	// 		if (currNode<(nodes_num-1)){
-	// 			graphcolorOPT(currNode+1,nodes_num,colors_num,adj_mat,pre_color,post_color);
-	// 		}
-	// 		else{
-	// 			result = true;
-	// 			cout << "ok "<<currNode<<endl;
-	// 			printVecSQ(post_color);
-	// 			return result;
-	// 		}
-	// 	}
-	// 	else{
-	// 		post_color.at(currNode) = temp;
-	// 	}
-
-	// }
-	// if (!result){
-	// 	cout << "No result of solving "<<currNode<<" node(s)"<<endl;	
-	// }
-
-	return result;
-}
 
 
-bool graphcolor(int nodes_num,int colors_num,vector< vector<int> > adj_mat,vector<int> pre_color,vector<int> &post_color)
+bool graphcolor(int nodes_num,int colors_used,vector< vector<int> > adj_mat,vector<int> pre_color,vector<int> &post_color)
 {
-	cout << "Start: \n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
+	cout << "Using "<< colors_used << " colors"<<endl;
 
-	int top_pre_color = 1;
-   	for (int i=0;i<nodes_num;++i){
-   		if (pre_color.at(i)>0){
-			if (top_pre_color < pre_color.at(i)) {
-				top_pre_color = pre_color.at(i);
-			}
-   		}
-	}
-
-	int k=0;
 	bool result = false;
 
-	for (int c = 1;c<colors_num+1;++c){
-		int colors_used = c;
-
-		cout << "colors_used: "<< c<<endl;
-
-		int k = 0;
-		while(!result)
-		{
+	int k = 0;
+	while(!result)
+	{
+		// cout << "k: "<< k+1<<endl;
+		if (pre_color.at(k)!=0){
+			post_color.at(k)=pre_color.at(k);
+			// if(!pass(nodes_num,adj_mat,pre_color,post_color)) {
+			// 	k = k-1;
+			// 	if (k<0){
+			// 		cout << "No solution by using "<< colors_used << " color(s)" <<endl<<endl;
+			// 		break;
+			// 	}
+			// }
+		}
+		else{
 			post_color.at(k)=post_color.at(k)+1;
 
 			while(post_color.at(k)<=colors_used){
-				if(pass(k,adj_mat,pre_color,post_color)) 
+				if(pass(nodes_num,adj_mat,pre_color,post_color)) 
 					break;
-			   else 
+			    else 
 					post_color.at(k)=post_color.at(k)+1;
 			}
-			// cout << "k: "<<k+1<<endl;
-			// printVecSQ(post_color);
-			if(post_color.at(k)<=colors_used&& k==(nodes_num-1) )
-			{
-				int top_post_color = 1;
-			   	for (int i=0;i<nodes_num;++i){
-					if (top_post_color < post_color.at(i)) {
-						top_post_color = post_color.at(i);
+		}
+
+		// printVecSQ(post_color);
+
+		if(post_color.at(k)<=colors_used&& k==(nodes_num-1) )
+		{
+			int top_post_color = 1;
+		   	for (int i=0;i<nodes_num;++i){
+				if (top_post_color < post_color.at(i)) {
+					top_post_color = post_color.at(i);
+				}
+			}
+
+			ofstream tsfile;
+			tsfile.open("result.txt");
+			cout << "Find result!"<< endl;
+
+
+			int top_pre_color = 1;
+		   	for (int i=0;i<nodes_num;++i){
+		   		if (pre_color.at(i)>0){
+					if (top_pre_color < pre_color.at(i)) {
+						top_pre_color = pre_color.at(i);
 					}
-				}
-
-				ofstream tsfile;
-				tsfile.open("result.txt");
-				cout << "Find result!"<< endl;
-
-				tsfile << top_post_color - top_pre_color <<"\n";	
-				cout << "Extra " <<  top_post_color - top_pre_color << " colors used"<<endl;
-			   	for (int i=0;i<nodes_num;++i){
-					// cout << post_color.at(i)  <<" ";
-	        		tsfile << post_color.at(i) <<" ";
-				}
-				cout << endl;
-				tsfile.close();
-
-				result = true;
-				return result;
+		   		}
 			}
-			else if(post_color.at(k)<=colors_used&&k<nodes_num){
-			   k=k+1;
+
+			tsfile << top_post_color - top_pre_color <<"\n";	
+			cout << top_post_color - top_pre_color << " extra colors used"<<endl;
+		   	for (int i=0;i<nodes_num;++i){
+				// cout << post_color.at(i)  <<" ";
+        		tsfile << post_color.at(i) <<" ";
 			}
-			else
-			{
-				post_color.at(k)=0;
-				k=k-1;
+			cout << endl;
+			tsfile.close();
+
+			result = true;
+			return result;
+		}
+		else if(post_color.at(k)<=colors_used&&k<nodes_num){
+		   k=k+1;
+		}
+		else
+		{
+			post_color.at(k)=0;
+			k=k-1;
+			// cout << "roll back"<<endl;
+			if (k<0){
+				cout << "No solution by using "<< colors_used << " color(s)" <<endl<<endl;
+				break;
+			}
+
+
+			while ( pre_color.at(k)!=0 ){
+				k = k-1;
 				if (k<0){
 					cout << "No solution by using "<< colors_used << " color(s)" <<endl<<endl;
 					break;
 				}
+				// cout << "jump to last non-zero"<<endl;
 			}
-		}
 
-		if (result){
-			break;
-		}
+			// cout << endl;
 
+		}
 	}
 
 	return result;
 }
 
+
+bool graphcolorOPT(int nodes_num,vector< vector<int> > adj_mat,vector<int> pre_color,vector<int> &post_color){
+	int colors_used = 1;
+   	for (int i=0;i<nodes_num;++i){
+		if (colors_used < pre_color.at(i)) {
+			colors_used = pre_color.at(i);
+		}
+	}
+	bool result = false;
+
+	while(!result && colors_used<=nodes_num){
+		result = graphcolor(nodes_num,colors_used,adj_mat,pre_color, post_color); 
+		colors_used = colors_used+1;
+	}
+
+	return result;
+}

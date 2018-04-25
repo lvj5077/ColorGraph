@@ -75,25 +75,39 @@ int main(int argc, char *argv[])
     // cout << "\nAdjacency Matrix: \n";
     // printMat (adj_mat);
 
+
+
     
-    cout << "pre_color: "<<endl;
-    printVecSQ(pre_color);
 
     int colors_num = nodes_num; // wrost case, all nodes have different colors
     vector <int> post_color (nodes_num,0);
 
+    bool findResult = false;
     clock_t tStart = clock();
-    bool findResult = graphcolor(nodes_num,colors_num,adj_mat,pre_color, post_color);
-    // bool findResult = graphcolorOPT(0,nodes_num,colors_num,adj_mat,pre_color,post_color);
-    cout << "Solved in "<< (double)(clock() - tStart)/CLOCKS_PER_SEC << "s \n"<<endl;
+    int testloop = 1;
+    for (int l=0;l<testloop;++l){
+        cout << "test loop: "<< l+1<<endl;
+        post_color = vector <int>(nodes_num,0);
+        // findResult = graphcolorOPT(nodes_num,adj_mat,pre_color, post_color); 
+        findResult = graphcolor(nodes_num,colors_num,adj_mat,pre_color, post_color); 
+        if (!findResult){
+            cout <<"Fails"<<endl;
+            break;
+        }
+    }
+    cout << "Solved in "<< (double)(clock() - tStart)/(testloop*CLOCKS_PER_SEC) << "s \n"<<endl;
 
 
     if (findResult){
+        cout << "pre_color: "<<endl;
         if (readFromfile){
+            printVecSQ(pre_color);
             cout << endl<< "post_color: "<<endl;
             printVecSQ(post_color);   
         }
         else{
+            printVec(pre_color);
+            cout << endl<< "post_color: "<<endl;
             printVec(post_color);  
         }
     }

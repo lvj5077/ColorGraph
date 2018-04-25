@@ -22,4 +22,4 @@ using namespace std;
 bool pass(int k,vector< vector<int> > adj_mat, vector<int> color);
 bool graphcolor(int nodes_num,int colors_num,vector< vector<int> > adj_mat,vector<int> pre_color, vector<int> &post_color);
 
-bool graphcolorOPT(int currNode, int nodes_num,int colors_num,vector< vector<int> > adj_mat,vector<int> pre_color, vector<int> &post_color);
+bool graphcolorOPT(int nodes_num,vector< vector<int> > adj_mat,vector<int> pre_color, vector<int> &post_color);

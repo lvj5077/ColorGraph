@@ -1,0 +1,1 @@
+g++   -Wall -std=gnu++0x -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/test2.dir/test2.cpp.o  -o ../../bin/test2  -L/Users/lingqiujin/Desktop/ColorGraph/lib -Wl,-rpath,/Users/lingqiujin/Desktop/ColorGraph/lib ../../lib/libcolorGraph.a ../../lib/libutilities.a 

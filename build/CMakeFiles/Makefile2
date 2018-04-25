@@ -63,6 +63,7 @@ CMAKE_BINARY_DIR = /Users/lingqiujin/Desktop/ColorGraph/build
 # Directory level rules for directory src
 
 # Convenience name for "all" pass in the directory.
+src/all: src/CMakeFiles/test2.dir/all
 src/all: src/CMakeFiles/input.dir/all
 src/all: src/CMakeFiles/utilities.dir/all
 src/all: src/CMakeFiles/test.dir/all
@@ -72,6 +73,7 @@ src/all: src/CMakeFiles/colorGraph.dir/all
 .PHONY : src/all
 
 # Convenience name for "clean" pass in the directory.
+src/clean: src/CMakeFiles/test2.dir/clean
 src/clean: src/CMakeFiles/input.dir/clean
 src/clean: src/CMakeFiles/utilities.dir/clean
 src/clean: src/CMakeFiles/test.dir/clean
@@ -84,6 +86,44 @@ src/clean: src/CMakeFiles/colorGraph.dir/clean
 src/preinstall:
 
 .PHONY : src/preinstall
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/test2.dir
+
+# All Build rule for target.
+src/CMakeFiles/test2.dir/all: src/CMakeFiles/utilities.dir/all
+src/CMakeFiles/test2.dir/all: src/CMakeFiles/colorGraph.dir/all
+	$(MAKE) -f src/CMakeFiles/test2.dir/build.make src/CMakeFiles/test2.dir/depend
+	$(MAKE) -f src/CMakeFiles/test2.dir/build.make src/CMakeFiles/test2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lingqiujin/Desktop/ColorGraph/build/CMakeFiles --progress-num=9,10 "Built target test2"
+.PHONY : src/CMakeFiles/test2.dir/all
+
+# Include target in all.
+all: src/CMakeFiles/test2.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/test2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lingqiujin/Desktop/ColorGraph/build/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/test2.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lingqiujin/Desktop/ColorGraph/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/test2.dir/rule
+
+# Convenience name for target.
+test2: src/CMakeFiles/test2.dir/rule
+
+.PHONY : test2
+
+# clean rule for target.
+src/CMakeFiles/test2.dir/clean:
+	$(MAKE) -f src/CMakeFiles/test2.dir/build.make src/CMakeFiles/test2.dir/clean
+.PHONY : src/CMakeFiles/test2.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/test2.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Target rules for target src/CMakeFiles/input.dir
@@ -129,7 +169,7 @@ clean: src/CMakeFiles/input.dir/clean
 src/CMakeFiles/utilities.dir/all:
 	$(MAKE) -f src/CMakeFiles/utilities.dir/build.make src/CMakeFiles/utilities.dir/depend
 	$(MAKE) -f src/CMakeFiles/utilities.dir/build.make src/CMakeFiles/utilities.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lingqiujin/Desktop/ColorGraph/build/CMakeFiles --progress-num=9,10 "Built target utilities"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lingqiujin/Desktop/ColorGraph/build/CMakeFiles --progress-num=11,12 "Built target utilities"
 .PHONY : src/CMakeFiles/utilities.dir/all
 
 # Include target in all.
